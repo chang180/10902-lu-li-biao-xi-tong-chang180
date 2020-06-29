@@ -47,28 +47,19 @@
             <div class="tab-content col-9" id="v-pills-tabContent">
                 <div class="tab-pane fade show active" id="title" role="tabpanel">
 
-                    <div class="row">
-                        <div class="card" style="width: 18rem;">
-                            <!-- <img src="..." class="card-img-top" alt="..."> -->
-                            <div class="card-body">
-                                <h5 class="card-title">張建文</h5>
-                                <p class="card-text">網頁程式設計學習中</p>
-                                <a href="#" class="btn btn-primary">聯絡方式</a>
-                            </div>
-                        </div>
-                    </div>
+                    <?php include "contact.php"; ?>
 
                 </div>
                 <div class="tab-pane fade" id="experience" role="tabpanel">
                     <form>
                         <div class="form-group">
-                            <label for="exampleInputEmail1">Email address</label>
-                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                            <label for="name">Email address</label>
+                            <input type="email" class="form-control" id="name" aria-describedby="emailHelp" placeholder="Enter email">
                             <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
                         </div>
                         <div class="form-group">
-                            <label for="exampleInputPassword1">Password</label>
-                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                            <label for="tel">Password</label>
+                            <input type="password" class="form-control" id="tel" placeholder="Password">
                         </div>
                         <div class="form-group form-check">
                             <input type="checkbox" class="form-check-input" id="exampleCheck1">

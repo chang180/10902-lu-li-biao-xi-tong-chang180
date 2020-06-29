@@ -10,7 +10,7 @@ contact
   image(varchar 32);
   tel (varchar 32);
   email (varchar 64);
-  add (text);
+  addr (varchar 64);
   intro(varchar 64);
 
 education 

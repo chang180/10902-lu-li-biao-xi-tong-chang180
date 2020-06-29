@@ -4,7 +4,7 @@ date_default_timezone_set("Asia/Taipei");
 
 class DB
 {
-    private $dsn = "mysql:host=localhost;charset=utf8;dbname=resume";
+    private $dsn = "mysql:host=localhost;charset=utf8;dbname=db";
     private $root = "root";
     private $password = "";
     public function __construct($table)
@@ -65,7 +65,8 @@ class DB
         if (isset($arg['id'])) {
             foreach ($arg as $k => $v) $tmp[] = "`$k`='$v'";
             $sql = sprintf("UPDATE %s SET %s WHERE `id`='%s'", $this->table, implode(",", $tmp), $arg['id']);
-        } else $sql = sprintf("INSERT INTO %s (`%s`) VALUES ('%s')", $this->table, implode("`,`", array_keys($arg)), implode($arg));
+        } else $sql = sprintf("INSERT INTO %s (`%s`) VALUES ('%s')", $this->table, implode("`,`", array_keys($arg)), implode("','",$arg));
+        // echo $sql;
         return $this->pdo->exec($sql);
     }
 }
