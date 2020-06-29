@@ -1,8 +1,15 @@
 <?php
 include_once "base.php";
-if (@$_POST['acc'] == "admin" && @$_POST['pw'] == "1234") $_SESSION['login'] = 1;
-else echo "<script>alert('帳號或密碼錯誤');</script>";
-if (!empty($_SESSION['login'])) to("backend/index.php");
+
+if (!empty($_POST['acc']) && !empty($_POST['pw'])) {
+    if ($_POST['acc'] == "admin" && $_POST['pw'] == "1234") {
+        $_SESSION['login'] = 1;
+        to("backend/index.php");
+    } else echo "<script>alert('帳號或密碼錯誤');</script>";
+}
+
+
+
 ?>
 
 <!DOCTYPE html>
@@ -19,17 +26,17 @@ if (!empty($_SESSION['login'])) to("backend/index.php");
 
 <body>
 
-<header class="row">
+    <header class="row">
 
-    <h1 class="col-6">電子履歷</h1>
-    <form class="col-6 float-right" action="?" method="post">
-        <label for="acc">帳號：</label>
-        <input type="text" name="acc" placeholder="admin">
-        <label for="pw">密碼：</label>
-        <input type="password" name="pw" placeholder="1234">
-        <input type="submit" value="送出">
-    </form>
-</header>
+        <h1 class="col-6">電子履歷</h1>
+        <form class="col-6 float-right" action="?" method="post">
+            <label for="acc">帳號：</label>
+            <input type="text" name="acc" placeholder="admin" required>
+            <label for="pw">密碼：</label>
+            <input type="password" name="pw" placeholder="1234" required>
+            <input type="submit" value="送出">
+        </form>
+    </header>
 
 
     <div class="container m-auto">
@@ -47,6 +54,11 @@ if (!empty($_SESSION['login'])) to("backend/index.php");
             <div class="tab-content col-9" id="v-pills-tabContent">
                 <div class="tab-pane fade show active" id="title" role="tabpanel">
 
+<?php include "contact.php";?>
+
+                </div>
+                <div class="tab-pane fade" id="experience" role="tabpanel">
+
                     <div class="row">
                         <div class="card" style="width: 18rem;">
                             <!-- <img src="..." class="card-img-top" alt="..."> -->
@@ -59,7 +71,6 @@ if (!empty($_SESSION['login'])) to("backend/index.php");
                     </div>
 
                 </div>
-                <div class="tab-pane fade" id="experience" role="tabpanel">222</div>
                 <div class="tab-pane fade" id="v-pills-messages" role="tabpanel">333</div>
                 <div class="tab-pane fade" id="v-pills-settings" role="tabpanel">444</div>
                 <div class="tab-pane fade" id="v-pills-settings1" role="tabpanel">555</div>
