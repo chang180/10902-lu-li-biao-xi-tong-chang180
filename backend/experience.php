@@ -1,6 +1,6 @@
 <form>
     <div class="form-group">
-        <label for="name">學校或公司</label>
+        <label for="name">公司名稱</label>
         <input type="text" class="form-control" id="name" placeholder="請輸入名稱">
     </div>
     <div class="form-group">

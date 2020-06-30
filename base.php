@@ -21,6 +21,7 @@ class DB
             $sql .= " WHERE " . implode(" && ", $tmp);
         }
         $sql .= $arg[1] ?? '';
+        // echo $sql;
         return $this->pdo->query($sql)->fetchAll();
     }
 

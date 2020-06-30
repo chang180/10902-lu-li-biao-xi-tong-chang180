@@ -1,5 +1,6 @@
 <?php include_once "../base.php";
 // if(empty($_SESSION['login'])) to("../index.php");
+// $do=$_GET['do'];
 ?>
 
 <!DOCTYPE html>
@@ -35,8 +36,9 @@
     <div class="container m-auto">
         <div class="row border">
             <div class="nav flex-column nav-pills col-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                <a class="btn btn-outline-success m-1 nav-link active" id="title-tab" data-toggle="pill" href="#title" role="tab">個人資料</a>
-                <a class="btn btn-outline-success m-1 nav-link" id="experience-tab" data-toggle="pill" href="#experience" role="tab">學經歷</a>
+                <a class="btn btn-outline-success m-1 nav-link <?=(@$_GET['do']=='title')?"active":"";?>" id="title-tab" data-toggle="pill" href="#title" role="tab">個人資料</a>
+                <a class="btn btn-outline-success m-1 nav-link <?=(@$_GET['do']=='education')?"active":"";?>" id="education-tab" data-toggle="pill" href="#education" role="tab">學歷</a>
+                <a class="btn btn-outline-success m-1 nav-link <?=(@$_GET['do']=='experience')?"active":"";?>" id="experience-tab" data-toggle="pill" href="#experience" role="tab">經歷</a>
                 <a class="btn btn-outline-success m-1 nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab">希望職務條件</a>
                 <a class="btn btn-outline-success m-1 nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab">技能</a>
                 <a class="btn btn-outline-success m-1 nav-link" id="v-pills-settings1-tab" data-toggle="pill" href="#v-pills-settings1" role="tab">自傳</a>
@@ -45,12 +47,16 @@
                 <a class="btn btn-outline-success m-1 nav-link" id="v-pills-settings4-tab" data-toggle="pill" href="#v-pills-settings4" role="tab">Settings</a>
             </div>
             <div class="tab-content col-9" id="v-pills-tabContent">
-                <div class="tab-pane fade show active" id="title" role="tabpanel">
+                <div class="tab-pane fade <?=(@$_GET['do']=='title')?"show active":"";?>" id="title" role="tabpanel">
 
                     <?php include "contact.php"; ?>
 
                 </div>
-                <div class="tab-pane fade" id="experience" role="tabpanel">
+                <div class="tab-pane fade <?=(@$_GET['do']=='education')?"show active":"";?>" id="education" role="tabpanel">
+                    <?php include "education.php";?>
+
+                </div>
+                <div class="tab-pane fade <?=(@$_GET['do']=='experience')?"show active":"";?>" id="experience" role="tabpanel">
                     <?php include "experience.php";?>
 
                 </div>
@@ -65,7 +71,6 @@
             </div>
         </div>
     </div>
-
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>

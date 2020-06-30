@@ -7,5 +7,5 @@ $_POST['id']=1;
 // echo "</pre>";
 $db->save($_POST);
 
-to("../backend/index.php#title");
+to("../backend/index.php?do=title");
 ?>

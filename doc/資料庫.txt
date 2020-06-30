@@ -17,8 +17,18 @@ education
   欄位:
   id(int 10);primary key
   school(varchar 32);
-  start(date);
-  end(date);
+  start(varchar 10);
+  end(varchar 10);
+  sh(tinyint 1);
+
+experience
+  欄位:
+  id(int 10);primary key
+  company(varchar 32);
+  jobtitle(varchar 32);
+  description(text);
+  start(varchar 10);
+  end(varchar 10);
   sh(tinyint 1);
 
 
