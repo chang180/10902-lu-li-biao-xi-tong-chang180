@@ -4,7 +4,7 @@ include_once "base.php";
 if (!empty($_POST['acc']) && !empty($_POST['pw'])) {
     if ($_POST['acc'] == "admin" && $_POST['pw'] == "1234") {
         $_SESSION['login'] = 1;
-        to("backend/index.php?do=title");
+        to("backend/index.php");
     } else echo "<script>alert('帳號或密碼錯誤');</script>";
 }
 

@@ -1,6 +1,6 @@
 <?php include_once "../base.php";
 // if(empty($_SESSION['login'])) to("../index.php");
-// $do=$_GET['do'];
+// $do=$_COOKIE['do'];
 ?>
 
 <!DOCTYPE html>
@@ -36,9 +36,9 @@
     <div class="container m-auto">
         <div class="row border">
             <div class="nav flex-column nav-pills col-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                <a class="btn btn-outline-success m-1 nav-link <?=(@$_GET['do']=='title')?"active":"";?>" id="title-tab" data-toggle="pill" href="#title" role="tab">個人資料</a>
-                <a class="btn btn-outline-success m-1 nav-link <?=(@$_GET['do']=='education')?"active":"";?>" id="education-tab" data-toggle="pill" href="#education" role="tab">學歷</a>
-                <a class="btn btn-outline-success m-1 nav-link <?=(@$_GET['do']=='experience')?"active":"";?>" id="experience-tab" data-toggle="pill" href="#experience" role="tab">經歷</a>
+                <a class="btn btn-outline-success m-1 nav-link <?=(@$_COOKIE['do']=='title' || !isset($_COOKIE['do']))?"active":"";?>" id="title-tab" data-toggle="pill" href="#title" role="tab">個人資料</a>
+                <a class="btn btn-outline-success m-1 nav-link <?=(@$_COOKIE['do']=='education')?"active":"";?>" id="education-tab" data-toggle="pill" href="#education" role="tab">學歷</a>
+                <a class="btn btn-outline-success m-1 nav-link <?=(@$_COOKIE['do']=='experience')?"active":"";?>" id="experience-tab" data-toggle="pill" href="#experience" role="tab">經歷</a>
                 <a class="btn btn-outline-success m-1 nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab">希望職務條件</a>
                 <a class="btn btn-outline-success m-1 nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab">技能</a>
                 <a class="btn btn-outline-success m-1 nav-link" id="v-pills-settings1-tab" data-toggle="pill" href="#v-pills-settings1" role="tab">自傳</a>
@@ -47,16 +47,16 @@
                 <a class="btn btn-outline-success m-1 nav-link" id="v-pills-settings4-tab" data-toggle="pill" href="#v-pills-settings4" role="tab">Settings</a>
             </div>
             <div class="tab-content col-9" id="v-pills-tabContent">
-                <div class="tab-pane fade <?=(@$_GET['do']=='title')?"show active":"";?>" id="title" role="tabpanel">
+                <div class="tab-pane fade <?=(@$_COOKIE['do']=='title' || !isset($_COOKIE['do']))?"show active":"";?>" id="title" role="tabpanel">
 
                     <?php include "contact.php"; ?>
 
                 </div>
-                <div class="tab-pane fade <?=(@$_GET['do']=='education')?"show active":"";?>" id="education" role="tabpanel">
+                <div class="tab-pane fade <?=(@$_COOKIE['do']=='education')?"show active":"";?>" id="education" role="tabpanel">
                     <?php include "education.php";?>
 
                 </div>
-                <div class="tab-pane fade <?=(@$_GET['do']=='experience')?"show active":"";?>" id="experience" role="tabpanel">
+                <div class="tab-pane fade <?=(@$_COOKIE['do']=='experience')?"show active":"";?>" id="experience" role="tabpanel">
                     <?php include "experience.php";?>
 
                 </div>
