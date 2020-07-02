@@ -3,7 +3,7 @@
     <div id="edu">
         <?php include_once "../base.php";
         $db = new DB('education');
-        $edu = $db->all("", " ORDER BY 'start' DESC");
+        $edu = $db->all("", " ORDER BY `start` DESC");
         foreach ($edu as $key => $value) {
 
         ?>

@@ -31,7 +31,38 @@ experience
   end(varchar 10);
   sh(tinyint 1);
 
+jobcondition
+  欄位:
+  id(int 10);primary key
+  title(varchar 32);
+  salary(varchar 16);
 
+skill
+  欄位:
+  id(int 10);primary key
+  skill(varchar 16);
+  catalog(varchar 16);
+
+portfolio
+  欄位:
+  id(int 10);primary key
+  title(varchar 32);
+  url(varchar 64);
+  intro(text)
+  sh(tinyint 1);
+
+autobiography  
+  欄位:
+  id(int 10);primary key
+  content(text);
+  sh(tinyint 1);
+
+picture
+  欄位:
+  id(int 10);primary key
+  name(varchar 32);
+  href(varchar 64);
+  sh(tinyint 1);
 
 --------------------下次繼續----------------
 
