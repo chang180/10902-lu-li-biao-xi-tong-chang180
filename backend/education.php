@@ -1,12 +1,11 @@
-<button class="btn btn-success float-right" onclick="moreEdu()">新增</button>
 <form action="../api/education.php" method="post">
-    <div id="edu">
-        <?php include_once "../base.php";
+<div id="edu">
+    <?php include_once "../base.php";
         $db = new DB('education');
         $edu = $db->all("", " ORDER BY `start` DESC");
         foreach ($edu as $key => $value) {
-
-        ?>
+            
+            ?>
             <div class="form-group">
                 <label for="name">學校</label>
                 <input type="text" class="form-control" name="school[]" value="<?= $value['school']; ?>">
@@ -28,14 +27,16 @@
                 <label class="form-check-label" for="del">刪除</label>
             </div>
             <input type="hidden" name="id[]" value="<?= $value['id']; ?>">
-
+            
             <hr>
-        <?php
+            <?php
         }
         ?>
     </div>
     <button type="submit" class="btn btn-primary">確認資料</button>
     <button type="reset" class="btn btn-secondary">重置</button>
+    <!-- button自帶submit效果 -->
+    <button class="btn btn-success float-right" onclick="moreEdu()">新增</button>
 </form>
 <script>
     moreEdu = () => {
