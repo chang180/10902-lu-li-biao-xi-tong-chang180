@@ -3,8 +3,8 @@
     <div id="exp">
         <?php include_once "../base.php";
         $db = new DB('experience');
-        $edu = $db->all("", " ORDER BY `start` DESC");
-        foreach ($edu as $key => $value) {
+        $exp = $db->all("", " ORDER BY `start` DESC");
+        foreach ($exp as $key => $value) {
 
         ?>
             <div class="form-group">

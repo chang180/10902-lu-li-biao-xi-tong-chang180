@@ -34,7 +34,7 @@ experience
 jobcondition
   欄位:
   id(int 10);primary key
-  title(varchar 32);
+  jobtitle(varchar 32);
   salary(varchar 16);
 
 skill

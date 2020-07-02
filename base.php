@@ -67,7 +67,7 @@ class DB
             foreach ($arg as $k => $v) $tmp[] = "`$k`='$v'";
             $sql = sprintf("UPDATE %s SET %s WHERE `id`='%s'", $this->table, implode(",", $tmp), $arg['id']);
         } else $sql = sprintf("INSERT INTO %s (`%s`) VALUES ('%s')", $this->table, implode("`,`", array_keys($arg)), implode("','",$arg));
-        // echo $sql;
+        // echo $sql,"<br>";
         return $this->pdo->exec($sql);
     }
 }

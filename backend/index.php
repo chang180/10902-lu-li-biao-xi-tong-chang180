@@ -36,35 +36,38 @@
     <div class="container m-auto">
         <div class="row border">
             <div class="nav flex-column nav-pills col-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                <a class="btn btn-outline-success m-1 nav-link <?=(@$_COOKIE['do']=='title' || !isset($_COOKIE['do']))?"active":"";?>" id="title-tab" data-toggle="pill" href="#title" role="tab">個人資料</a>
-                <a class="btn btn-outline-success m-1 nav-link <?=(@$_COOKIE['do']=='education')?"active":"";?>" id="education-tab" data-toggle="pill" href="#education" role="tab">學歷</a>
-                <a class="btn btn-outline-success m-1 nav-link <?=(@$_COOKIE['do']=='experience')?"active":"";?>" id="experience-tab" data-toggle="pill" href="#experience" role="tab">經歷</a>
-                <a class="btn btn-outline-success m-1 nav-link <?=(@$_COOKIE['do']=='jobcondition')?"active":"";?>" id="jobcondition-tab" data-toggle="pill" href="#jobcondition" role="tab">希望職務條件</a>
-                <a class="btn btn-outline-success m-1 nav-link" id="skill-tab" data-toggle="pill" href="#skill" role="tab">技能</a>
+                <a class="btn btn-outline-success m-1 nav-link <?= (@$_COOKIE['do'] == 'title' || !isset($_COOKIE['do'])) ? "active" : ""; ?>" id="title-tab" data-toggle="pill" href="#title" role="tab">個人資料</a>
+                <a class="btn btn-outline-success m-1 nav-link <?= (@$_COOKIE['do'] == 'education') ? "active" : ""; ?>" id="education-tab" data-toggle="pill" href="#education" role="tab">學歷</a>
+                <a class="btn btn-outline-success m-1 nav-link <?= (@$_COOKIE['do'] == 'experience') ? "active" : ""; ?>" id="experience-tab" data-toggle="pill" href="#experience" role="tab">經歷</a>
+                <a class="btn btn-outline-success m-1 nav-link <?= (@$_COOKIE['do'] == 'jobcondition') ? "active" : ""; ?>" id="jobcondition-tab" data-toggle="pill" href="#jobcondition" role="tab">希望職務條件</a>
+                <a class="btn btn-outline-success m-1 nav-link <?= (@$_COOKIE['do'] == 'skill') ? "active" : ""; ?>" id="skill-tab" data-toggle="pill" href="#skill" role="tab">技能</a>
                 <a class="btn btn-outline-success m-1 nav-link" id="autobiography-tab" data-toggle="pill" href="#autobiography" role="tab">自傳</a>
                 <a class="btn btn-outline-success m-1 nav-link" id="portfolio-tab" data-toggle="pill" href="#portfolio" role="tab">作品集</a>
                 <a class="btn btn-outline-success m-1 nav-link" id="seventh-tab" data-toggle="pill" href="#seventh" role="tab">Settings</a>
                 <a class="btn btn-outline-success m-1 nav-link" id="eighth-tab" data-toggle="pill" href="#eighth" role="tab">Settings</a>
             </div>
             <div class="tab-content col-9" id="v-pills-tabContent">
-                <div class="tab-pane fade <?=(@$_COOKIE['do']=='title' || !isset($_COOKIE['do']))?"show active":"";?>" id="title" role="tabpanel">
+                <div class="tab-pane fade <?= (@$_COOKIE['do'] == 'title' || !isset($_COOKIE['do'])) ? "show active" : ""; ?>" id="title" role="tabpanel">
 
                     <?php include "contact.php"; ?>
 
                 </div>
-                <div class="tab-pane fade <?=(@$_COOKIE['do']=='education')?"show active":"";?>" id="education" role="tabpanel">
-                    <?php include "education.php";?>
+                <div class="tab-pane fade <?= (@$_COOKIE['do'] == 'education') ? "show active" : ""; ?>" id="education" role="tabpanel">
+                    <?php include "education.php"; ?>
 
                 </div>
-                <div class="tab-pane fade <?=(@$_COOKIE['do']=='experience')?"show active":"";?>" id="experience" role="tabpanel">
-                    <?php include "experience.php";?>
+                <div class="tab-pane fade <?= (@$_COOKIE['do'] == 'experience') ? "show active" : ""; ?>" id="experience" role="tabpanel">
+                    <?php include "experience.php"; ?>
 
                 </div>
-                <div class="tab-pane fade <?=(@$_COOKIE['do']=='jobcondition')?"show active":"";?>" id="jobcondition" role="tabpanel">
-                Job Condition
-                
+                <div class="tab-pane fade <?= (@$_COOKIE['do'] == 'jobcondition') ? "show active" : ""; ?>" id="jobcondition" role="tabpanel">
+                    <?php include "jobcondition.php"; ?>
+
                 </div>
-                <div class="tab-pane fade" id="skill" role="tabpanel">444</div>
+                <div class="tab-pane fade <?= (@$_COOKIE['do'] == 'skill') ? "show active" : ""; ?>" id="skill" role="tabpanel">
+                    <?php include "skill.php"; ?>
+
+                </div>
                 <div class="tab-pane fade" id="autobiography" role="tabpanel">555</div>
                 <div class="tab-pane fade" id="portfolio" role="tabpanel">
                     <a href="http://220.128.133.15/s1090215/">連結</a>

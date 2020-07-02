@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主機： 127.0.0.1
--- 產生時間： 2020-07-02 06:10:12
+-- 產生時間： 
 -- 伺服器版本： 10.4.11-MariaDB
--- PHP 版本： 7.4.3
+-- PHP 版本： 7.4.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -91,6 +91,49 @@ INSERT INTO `experience` (`id`, `company`, `jobtitle`, `description`, `start`, `
 (1, '泰山職訓場', '學員', '學技術', '2020-03', '2020-08', 1),
 (2, '非洲貿易公司', '駐外人員', '住在外面', '2019-02', '2019-12', 1);
 
+-- --------------------------------------------------------
+
+--
+-- 資料表結構 `jobcondition`
+--
+
+CREATE TABLE `jobcondition` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `jobtitle` varchar(32) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `salary` varchar(16) COLLATE utf8mb4_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- 傾印資料表的資料 `jobcondition`
+--
+
+INSERT INTO `jobcondition` (`id`, `jobtitle`, `salary`) VALUES
+(1, 'PHP工程師', '35000'),
+(5, '454', '456456');
+
+-- --------------------------------------------------------
+
+--
+-- 資料表結構 `skill`
+--
+
+CREATE TABLE `skill` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `skill` varchar(16) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `catalog` varchar(16) COLLATE utf8mb4_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- 傾印資料表的資料 `skill`
+--
+
+INSERT INTO `skill` (`id`, `skill`, `catalog`) VALUES
+(1, 'PHP', '後端'),
+(2, 'JavaScript', '前端'),
+(3, 'HTML', '前端'),
+(4, 'CSS', '前端'),
+(7, 'MySQL', '後端');
+
 --
 -- 已傾印資料表的索引
 --
@@ -114,6 +157,18 @@ ALTER TABLE `experience`
   ADD PRIMARY KEY (`id`);
 
 --
+-- 資料表索引 `jobcondition`
+--
+ALTER TABLE `jobcondition`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- 資料表索引 `skill`
+--
+ALTER TABLE `skill`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- 在傾印的資料表使用自動遞增(AUTO_INCREMENT)
 --
 
@@ -134,6 +189,18 @@ ALTER TABLE `education`
 --
 ALTER TABLE `experience`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- 使用資料表自動遞增(AUTO_INCREMENT) `jobcondition`
+--
+ALTER TABLE `jobcondition`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- 使用資料表自動遞增(AUTO_INCREMENT) `skill`
+--
+ALTER TABLE `skill`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
