@@ -41,7 +41,7 @@
                 <a class="btn btn-outline-success m-1 nav-link <?= (@$_COOKIE['do'] == 'experience') ? "active" : ""; ?>" id="experience-tab" data-toggle="pill" href="#experience" role="tab">經歷</a>
                 <a class="btn btn-outline-success m-1 nav-link <?= (@$_COOKIE['do'] == 'jobcondition') ? "active" : ""; ?>" id="jobcondition-tab" data-toggle="pill" href="#jobcondition" role="tab">希望職務條件</a>
                 <a class="btn btn-outline-success m-1 nav-link <?= (@$_COOKIE['do'] == 'skill') ? "active" : ""; ?>" id="skill-tab" data-toggle="pill" href="#skill" role="tab">技能</a>
-                <a class="btn btn-outline-success m-1 nav-link" id="autobiography-tab" data-toggle="pill" href="#autobiography" role="tab">自傳</a>
+                <a class="btn btn-outline-success m-1 nav-link <?= (@$_COOKIE['do'] == 'autobiography') ? "active" : ""; ?>" " id=" autobiography-tab" data-toggle="pill" href="#autobiography" role="tab">自傳</a>
                 <a class="btn btn-outline-success m-1 nav-link" id="portfolio-tab" data-toggle="pill" href="#portfolio" role="tab">作品集</a>
                 <a class="btn btn-outline-success m-1 nav-link" id="seventh-tab" data-toggle="pill" href="#seventh" role="tab">Settings</a>
                 <a class="btn btn-outline-success m-1 nav-link" id="eighth-tab" data-toggle="pill" href="#eighth" role="tab">Settings</a>
@@ -68,12 +68,14 @@
                     <?php include "skill.php"; ?>
 
                 </div>
-                <div class="tab-pane fade" id="autobiography" role="tabpanel">555</div>
+                <div class="tab-pane fade  <?= (@$_COOKIE['do'] == 'autobiography') ? "show active" : ""; ?>" id="autobiography" role="tabpanel">
+                    <?php include "autobiography.php"; ?>
+                </div>
                 <div class="tab-pane fade" id="portfolio" role="tabpanel">
                     <a href="http://220.128.133.15/s1090215/">連結</a>
                 </div>
-                <div class="tab-pane fade" id="seventh" role="tabpanel">777</div>
-                <div class="tab-pane fade" id="eighth" role="tabpanel">888</div>
+                <div class="tab-pane fade" id="seventh" role="tabpanel">預留兩欄</div>
+                <div class="tab-pane fade" id="eighth" role="tabpanel">用不著再刪就好</div>
             </div>
         </div>
     </div>

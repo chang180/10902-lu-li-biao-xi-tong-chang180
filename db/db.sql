@@ -21,6 +21,35 @@ SET time_zone = "+00:00";
 --
 -- 資料庫： `db`
 --
+CREATE DATABASE IF NOT EXISTS `db` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+USE `db`;
+
+-- --------------------------------------------------------
+
+--
+-- 資料表結構 `autobiography`
+--
+
+DROP TABLE IF EXISTS `autobiography`;
+CREATE TABLE `autobiography` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `content` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `sh` tinyint(1) UNSIGNED NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- 資料表新增資料前，先清除舊資料 `autobiography`
+--
+
+TRUNCATE TABLE `autobiography`;
+--
+-- 傾印資料表的資料 `autobiography`
+--
+
+INSERT INTO `autobiography` (`id`, `content`, `sh`) VALUES
+(1, '測試一下', 0),
+(4, '自傳擇一顯示，完成', 0),
+(5, 'test', 0);
 
 -- --------------------------------------------------------
 
@@ -28,6 +57,7 @@ SET time_zone = "+00:00";
 -- 資料表結構 `contact`
 --
 
+DROP TABLE IF EXISTS `contact`;
 CREATE TABLE `contact` (
   `id` int(10) UNSIGNED NOT NULL,
   `name` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -38,6 +68,11 @@ CREATE TABLE `contact` (
   `intro` varchar(64) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- 資料表新增資料前，先清除舊資料 `contact`
+--
+
+TRUNCATE TABLE `contact`;
 --
 -- 傾印資料表的資料 `contact`
 --
@@ -51,6 +86,7 @@ INSERT INTO `contact` (`id`, `name`, `image`, `tel`, `email`, `addr`, `intro`) V
 -- 資料表結構 `education`
 --
 
+DROP TABLE IF EXISTS `education`;
 CREATE TABLE `education` (
   `id` int(10) UNSIGNED NOT NULL,
   `school` varchar(32) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -60,12 +96,17 @@ CREATE TABLE `education` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
+-- 資料表新增資料前，先清除舊資料 `education`
+--
+
+TRUNCATE TABLE `education`;
+--
 -- 傾印資料表的資料 `education`
 --
 
 INSERT INTO `education` (`id`, `school`, `start`, `end`, `sh`) VALUES
 (1, '泰山職訓場', '2020-03', '2020-08', 1),
-(2, '123123', '2020-01', '2020-02', 1);
+(4, '海軍官校-企業管理組', '1993-07', '1997-11', 1);
 
 -- --------------------------------------------------------
 
@@ -73,6 +114,7 @@ INSERT INTO `education` (`id`, `school`, `start`, `end`, `sh`) VALUES
 -- 資料表結構 `experience`
 --
 
+DROP TABLE IF EXISTS `experience`;
 CREATE TABLE `experience` (
   `id` int(10) UNSIGNED NOT NULL,
   `company` varchar(32) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -83,6 +125,11 @@ CREATE TABLE `experience` (
   `sh` tinyint(1) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- 資料表新增資料前，先清除舊資料 `experience`
+--
+
+TRUNCATE TABLE `experience`;
 --
 -- 傾印資料表的資料 `experience`
 --
@@ -97,12 +144,18 @@ INSERT INTO `experience` (`id`, `company`, `jobtitle`, `description`, `start`, `
 -- 資料表結構 `jobcondition`
 --
 
+DROP TABLE IF EXISTS `jobcondition`;
 CREATE TABLE `jobcondition` (
   `id` int(10) UNSIGNED NOT NULL,
   `jobtitle` varchar(32) COLLATE utf8mb4_unicode_ci NOT NULL,
   `salary` varchar(16) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- 資料表新增資料前，先清除舊資料 `jobcondition`
+--
+
+TRUNCATE TABLE `jobcondition`;
 --
 -- 傾印資料表的資料 `jobcondition`
 --
@@ -117,12 +170,18 @@ INSERT INTO `jobcondition` (`id`, `jobtitle`, `salary`) VALUES
 -- 資料表結構 `skill`
 --
 
+DROP TABLE IF EXISTS `skill`;
 CREATE TABLE `skill` (
   `id` int(10) UNSIGNED NOT NULL,
   `skill` varchar(16) COLLATE utf8mb4_unicode_ci NOT NULL,
   `catalog` varchar(16) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- 資料表新增資料前，先清除舊資料 `skill`
+--
+
+TRUNCATE TABLE `skill`;
 --
 -- 傾印資料表的資料 `skill`
 --
@@ -132,11 +191,19 @@ INSERT INTO `skill` (`id`, `skill`, `catalog`) VALUES
 (2, 'JavaScript', '前端'),
 (3, 'HTML', '前端'),
 (4, 'CSS', '前端'),
-(7, 'MySQL', '後端');
+(7, 'MySQL', '後端'),
+(8, 'Photoshop', '影像編輯'),
+(9, '中打 100字/分', '其他');
 
 --
 -- 已傾印資料表的索引
 --
+
+--
+-- 資料表索引 `autobiography`
+--
+ALTER TABLE `autobiography`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- 資料表索引 `contact`
@@ -173,6 +240,12 @@ ALTER TABLE `skill`
 --
 
 --
+-- 使用資料表自動遞增(AUTO_INCREMENT) `autobiography`
+--
+ALTER TABLE `autobiography`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
 -- 使用資料表自動遞增(AUTO_INCREMENT) `contact`
 --
 ALTER TABLE `contact`
@@ -182,7 +255,7 @@ ALTER TABLE `contact`
 -- 使用資料表自動遞增(AUTO_INCREMENT) `education`
 --
 ALTER TABLE `education`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- 使用資料表自動遞增(AUTO_INCREMENT) `experience`
@@ -200,7 +273,7 @@ ALTER TABLE `jobcondition`
 -- 使用資料表自動遞增(AUTO_INCREMENT) `skill`
 --
 ALTER TABLE `skill`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
