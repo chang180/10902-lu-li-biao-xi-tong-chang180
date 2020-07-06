@@ -6,7 +6,7 @@ foreach($por as $key=>$value){
     ?>
 <div class="col-12 col-md-6">
     <div class="card" style="width: 18rem;">
-        <img src="img/<?=$value['img'];?>" class="card-img-top img-thumbnail">
+        <img src="img/<?=$value['img'];?>" class="card-img-top img-thumbnail portimg">
         <div class="card-body mx-auto">
             <h5 class="card-title"><?=$value['title'];?></h5>
             <p class="card-text"><?=$value['intro'];?></p>

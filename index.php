@@ -29,6 +29,11 @@ if (!empty($_POST['acc']) && !empty($_POST['pw'])) {
         min-height: 60vh;
         background: #eee;
     }
+
+    .portimg{
+        height:20vh;
+        object-fit:cover;
+    }
     </style>
 </head>
 

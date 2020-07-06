@@ -24,6 +24,10 @@
         min-height: 60vh;
         background: #eee;
     }
+    .portimg{
+        height:20vh;
+        object-fit:cover;
+    }
 </style>
 
 <body>

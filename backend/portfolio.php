@@ -1,47 +1,68 @@
 <button class="btn btn-success float-right" onclick="morePor()">新增</button>
 <form action="../api/portfolio.php" method="post" enctype="multipart/form-data">
-    <table class="table" id="por">
-        <thead class="thead-dark">
-            <tr>
-                <th scope="col-2">作品名稱</th>
-                <th scope="col-4">簡介</th>
-                <th scope="col-2">檔案名稱</th>
-                <th scope="col-2">連結網址</th>
-                <th scope="col-1">顯示</th>
-                <th scope="col-1">刪除</th>
-            </tr>
-        </thead>
-    
-    
-    
+    <div id="por">
         <?php include_once "../base.php";
         $db = new DB('portfolio');
-        $por = $db->all();
+        $por = $db->all("");
         foreach ($por as $key => $value) {
-    
+
         ?>
-            <tbody>
-                <tr>
-                    <th scope="row"><?= $value['title']; ?></th>
-                    <td><?= $value['intro']; ?></td>
-                    <td><?= $value['img']; ?></td>
-                    <td><?= $value['url']; ?></td>
-                    <td><?= $value['sh']; ?></td>
-                    <td></td>
-                </tr>
-            </tbody>
+            <div class="form-group">
+                <label for="title">作品名稱</label>
+                <input type="text" class="form-control" name="title[]" value="<?= $value['title']; ?>">
+            </div>
+            <div class="form-group">
+                <label for="intro">簡介</label>
+                <input type="text" class="form-control" name="intro[]" value="<?= $value['intro']; ?>">
+            </div>
+            <div class="form-group">
+                <img class="col-6 portimg" src="../img/<?= $value['img']; ?>">
+                <input class="btn btn-outline-danger" type="button" value="更換圖片">
+                <label for="img">更換圖片</label>
+                <input type="file" class="form-control-file" id="img" name="img[]">
+            </div>
+            <div class="form-group">
+                <label for="url">連結網址</label>
+                <input type="text" class="form-control" name="url[]" value="<?= $value['url']; ?>">
+            </div>
+            <div class="form-group form-check">
+                <input type="checkbox" class="form-check-input" name="sh[]" value="<?= $value['id']; ?>" <?= ($value['sh'] == 1) ? "checked" : ""; ?>>
+                <label class="form-check-label" for="sh">顯示</label>
+            </div>
+            <div class="form-group form-check">
+                <input type="checkbox" class="form-check-input" name="del[]" value="<?= $value['id']; ?>">
+                <label class="form-check-label" for="del">刪除</label>
+            </div>
+            <input type="hidden" name="id[]" value="<?= $value['id']; ?>">
+
+            <hr>
         <?php
         }
         ?>
-    </table>
-
+    </div>
+    <button type="submit" class="btn btn-primary">確認資料</button>
+    <button type="reset" class="btn btn-secondary">重置</button>
 </form>
-
 <script>
     morePor = () => {
         let row = `
-            
-        
+        <div class="form-group">
+                <label for="title">作品名稱</label>
+                <input type="text" class="form-control" name="title2[]">
+            </div>
+            <div class="form-group">
+                <label for="intro">簡介</label>
+                <input type="text" class="form-control" name="intro2[]">
+            </div>
+            <div class="form-group">
+                <label for="img">檔案名稱</label>
+                <input type="text" class="form-control" name="img2[]">
+            </div>
+            <div class="form-group">
+                <label for="url2">連結網址</label>
+                <input type="text" class="form-control" name="url2[]">
+            </div>
+            <hr>
             `;
         $('#por').append(row);
     }
