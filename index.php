@@ -21,6 +21,14 @@ if (!empty($_POST['acc']) && !empty($_POST['pw'])) {
     <title>我的電子履歷表</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <style>
+         * {
+        font-family: 'Noto Sans TC', sans-serif;
+    }
+
+    .main {
+        min-height: 60vh;
+        background: #eee;
+    }
     </style>
 </head>
 
@@ -77,23 +85,12 @@ if (!empty($_POST['acc']) && !empty($_POST['pw'])) {
                 <div class="tab-pane fade  <?= (@$_COOKIE['do'] == 'autobiography') ? "show active" : ""; ?>" id="autobiography" role="tabpanel">
                     <?php include "./front/autobiography.php"; ?>
                 </div>
-                <div class="tab-pane fade <?= (@$_COOKIE['do'] == 'portfolio') ? "show active" : ""; ?>" id="portfolio" role="tabpanel">
+                <div class="tab-pane fade <?= (@$_COOKIE['do'] == 'portfolio') ? "show active" : ""; ?> d-flex row" id="portfolio" role="tabpanel">
+                <?php include "./front/portfolio.php"; ?>
                     <a href="http://220.128.133.15/s1090215/">連結</a>
                 </div>
                 <div class="tab-pane fade" id="seventh" role="tabpanel">預留兩欄</div>
                 <div class="tab-pane fade" id="eighth" role="tabpanel">用不著再刪就好</div>
-            </div>
-        </div>
-    </div>
-
-
-    <div class="row">
-        <div class="card" style="width: 18rem;">
-            <!-- <img src="..." class="card-img-top" alt="..."> -->
-            <div class="card-body">
-                <h5 class="card-title">張建文</h5>
-                <p class="card-text">網頁程式設計學習中</p>
-                <a href="mailto:chang180@gmail.com" class="btn btn-primary">寄信給我</a>
             </div>
         </div>
     </div>

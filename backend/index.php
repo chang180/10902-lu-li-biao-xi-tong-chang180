@@ -72,6 +72,7 @@
                     <?php include "autobiography.php"; ?>
                 </div>
                 <div class="tab-pane fade <?= (@$_COOKIE['do'] == 'portfolio') ? "show active" : ""; ?>" id="portfolio" role="tabpanel">
+                    <?php include "portfolio.php"; ?>
                     <a href="http://220.128.133.15/s1090215/">連結</a>
                 </div>
                 <div class="tab-pane fade" id="seventh" role="tabpanel">預留兩欄</div>
