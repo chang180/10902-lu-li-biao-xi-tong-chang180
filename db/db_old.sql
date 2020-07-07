@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主機： 127.0.0.1
--- 產生時間： 2020-07-07 09:58:07
+-- 產生時間： 2020-07-06 10:14:44
 -- 伺服器版本： 10.4.11-MariaDB
 -- PHP 版本： 7.4.3
 
@@ -21,6 +21,8 @@ SET time_zone = "+00:00";
 --
 -- 資料庫： `db`
 --
+CREATE DATABASE IF NOT EXISTS `db` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+USE `db`;
 
 -- --------------------------------------------------------
 
@@ -86,7 +88,9 @@ CREATE TABLE `education` (
 --
 
 INSERT INTO `education` (`id`, `school`, `start`, `end`, `sh`) VALUES
-(1, '泰山職訓場', '2020-03', '2020-08', 1);
+(1, '泰山職訓場', '2020-03', '2020-08', 1),
+(4, '海軍官校-企業管理組', '1993-07', '1997-11', 1),
+(5, 'test', '2020-04', '2020-08', 0);
 
 -- --------------------------------------------------------
 
@@ -111,7 +115,7 @@ CREATE TABLE `experience` (
 INSERT INTO `experience` (`id`, `company`, `jobtitle`, `description`, `start`, `end`, `sh`) VALUES
 (1, '泰山職訓場', '學員', '學技術', '2020-03', '2020-08', 1),
 (2, '非洲貿易公司', '駐外人員', '住在外面', '2019-02', '2019-12', 1),
-(3, '東牧', '倉管', '管理倉庫', '2016-01', '2016-04', 1);
+(3, '東牧', '倉管', '管理倉庫', '2016-01', '2016-04', 0);
 
 -- --------------------------------------------------------
 
@@ -131,8 +135,7 @@ CREATE TABLE `jobcondition` (
 
 INSERT INTO `jobcondition` (`id`, `jobtitle`, `salary`) VALUES
 (1, 'PHP工程師', '35000'),
-(5, '前端工程師', '32000'),
-(6, '後端工程師', '38000');
+(5, '454', '456456');
 
 -- --------------------------------------------------------
 
@@ -154,16 +157,7 @@ CREATE TABLE `portfolio` (
 --
 
 INSERT INTO `portfolio` (`id`, `title`, `intro`, `url`, `sh`, `img`) VALUES
-(6, '網丙第一題', '練習', 'http://220.128.133.15/s1090215/cquiz_practice/Web05/', 1, 'cquiz1.PNG'),
-(7, '網丙第二題', '練習', 'http://220.128.133.15/s1090215/cquiz_practice/Web03/', 1, 'cquiz2.PNG'),
-(8, '網丙第三題', '練習', 'http://220.128.133.15/s1090215/cquiz_practice/Web02/', 1, 'cquiz3.PNG'),
-(9, '網丙第四題', '練習', 'http://220.128.133.15/s1090215/cquiz_practice/Web04/', 1, 'cquiz4.PNG'),
-(10, '網丙第五題', '練習', 'http://220.128.133.15/s1090215/cquiz_practice/Web01/', 1, 'cquiz5.PNG'),
-(11, '刻骰子', '以bootstrap的flexbox方式練習刻畫骰子', 'http://220.128.133.15/s1090215/dice.html', 1, 'dice.jpg'),
-(12, '網乙第二題', '練習', 'http://220.128.133.15/s1090215/bquiz01/', 1, 'bquiz1.PNG'),
-(13, '電子時鐘', 'JS練習', 'https://chang180.github.io/js-digiclock/', 1, 'jsclock1.PNG'),
-(14, '換色碼', 'JS練習', 'https://chang180.github.io/js-rgb/', 1, 'jscolor.PNG'),
-(15, '過五關', 'JS練習', 'https://chang180.github.io/js-five-challenge/', 1, 'jsfive.PNG');
+(1, 'aaaa', 'bbbb', 'cccc', 1, 'dddd');
 
 -- --------------------------------------------------------
 
@@ -189,8 +183,7 @@ INSERT INTO `skill` (`id`, `skill`, `catalog`) VALUES
 (7, 'MySQL', '後端'),
 (8, 'Photoshop', '影像編輯'),
 (9, '中打 100字/分', '其他'),
-(10, '英打 70字/分', '其他'),
-(11, 'Illustrator', '影像編輯');
+(10, '英打 70字/分', '其他');
 
 --
 -- 已傾印資料表的索引
@@ -258,7 +251,7 @@ ALTER TABLE `contact`
 -- 使用資料表自動遞增(AUTO_INCREMENT) `education`
 --
 ALTER TABLE `education`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- 使用資料表自動遞增(AUTO_INCREMENT) `experience`
@@ -270,19 +263,19 @@ ALTER TABLE `experience`
 -- 使用資料表自動遞增(AUTO_INCREMENT) `jobcondition`
 --
 ALTER TABLE `jobcondition`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- 使用資料表自動遞增(AUTO_INCREMENT) `portfolio`
 --
 ALTER TABLE `portfolio`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- 使用資料表自動遞增(AUTO_INCREMENT) `skill`
 --
 ALTER TABLE `skill`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
