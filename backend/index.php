@@ -12,6 +12,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="shortcut icon" href="#" type="image/x-icon">
     <title>履歷表後台管理</title>
+
+    
 </head>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
@@ -77,7 +79,7 @@
                 </div>
                 <div class="tab-pane fade <?= (@$_COOKIE['do'] == 'portfolio') ? "show active" : ""; ?>" id="portfolio" role="tabpanel">
                     <?php include "portfolio.php"; ?>
-                    <a href="http://220.128.133.15/s1090215/">連結</a>
+                    <!-- <a href="http://220.128.133.15/s1090215/">連結</a> -->
                 </div>
                 <div class="tab-pane fade" id="seventh" role="tabpanel">預留兩欄</div>
                 <div class="tab-pane fade" id="eighth" role="tabpanel">用不著再刪就好</div>

@@ -31,6 +31,7 @@ if (!empty($_POST['acc']) && !empty($_POST['pw'])) {
     }
 
     .portimg{
+        width:100%;
         height:20vh;
         object-fit:cover;
     }
@@ -65,7 +66,7 @@ if (!empty($_POST['acc']) && !empty($_POST['pw'])) {
                 <a class="btn btn-outline-success m-1 nav-link" id="seventh-tab" data-toggle="pill" href="#seventh" role="tab">Settings</a>
                 <a class="btn btn-outline-success m-1 nav-link" id="eighth-tab" data-toggle="pill" href="#eighth" role="tab">Settings</a>
             </div>
-            <div class="tab-content col-9" id="v-pills-tabContent">
+            <div class="tab-content col-9 " id="v-pills-tabContent">
                 <div class="tab-pane fade <?= (@$_COOKIE['do'] == 'title' || !isset($_COOKIE['do'])) ? "show active" : ""; ?>" id="title" role="tabpanel">
 
                     <?php include "./front/contact.php"; ?>
@@ -90,9 +91,9 @@ if (!empty($_POST['acc']) && !empty($_POST['pw'])) {
                 <div class="tab-pane fade  <?= (@$_COOKIE['do'] == 'autobiography') ? "show active" : ""; ?>" id="autobiography" role="tabpanel">
                     <?php include "./front/autobiography.php"; ?>
                 </div>
-                <div class="tab-pane fade <?= (@$_COOKIE['do'] == 'portfolio') ? "show active" : ""; ?> d-flex row" id="portfolio" role="tabpanel">
+                <div class="tab-pane fade d-flex row<?= (@$_COOKIE['do'] == 'portfolio') ? "show active" : ""; ?> " id="portfolio" role="tabpanel">
                 <?php include "./front/portfolio.php"; ?>
-                    <a href="http://220.128.133.15/s1090215/">連結</a>
+                    <!-- <a href="http://220.128.133.15/s1090215/">連結</a> -->
                 </div>
                 <div class="tab-pane fade" id="seventh" role="tabpanel">預留兩欄</div>
                 <div class="tab-pane fade" id="eighth" role="tabpanel">用不著再刪就好</div>
