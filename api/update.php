@@ -1,11 +1,5 @@
 <?php
-var_dump($_FILES);
-// var_dump($_FILES['pic']['tmp_img']);
-// if(!empty($_FILES['img']['tmp_img'])){
-//     move_uploaded_file($_FILES['img']['tmp_img'],"../img/".$_FILES['img']['img']);
-// }
-
-// header("location:../backend/index.php");
+// var_dump($_FILES);
 
 include_once "../base.php";
 
