@@ -2,6 +2,8 @@
 session_start();
 date_default_timezone_set("Asia/Taipei");
 
+$Portfolio=new DB('portfolio');
+
 class DB
 {
     private $dsn = "mysql:host=localhost;charset=utf8;dbname=db";

@@ -20,15 +20,17 @@
                 <div class="form-group">
                     <img class="col-6 portimg" src="../img/<?= $value['img']; ?>">
 
-                    <input id="portrait1" class="btn btn-outline-danger" type="button" value="更換圖片" onclick="location.href='../modal/portrait.php?id=<?= $value['id']; ?>'">
+                    <!-- <input id="portrait1" class="btn btn-outline-danger" type="button" value="更換圖片" onclick="location.href='../modal/portrait.php?id=<?= $value['id']; ?>'"> -->
 
                     <!-- Button trigger modal -->
                     <!-- <button type="button" class="btn btn-primary" onclick="showmodal(<?= $value['id'] ?>)">
-    更換圖片
-</button> -->
-                    <!-- <button type="button" class="btn btn-primary portfo" data-toggle="modal" data-target="#portrait" data-id="<?= $value['id']; ?>">
-                        更新圖片
+                        更換圖片
                     </button> -->
+
+
+                    <button type="button" class="btn btn-primary portfo" data-toggle="modal" data-target="#portrait" data-id="<?= $value['id']; ?>" onclick="editPortrait(<?= $value['id']; ?>)">
+                        更新圖片
+                    </button>
 
                     <input type="hidden" class="form-control-file" id="img" name="img[]" value="<?= $value['img']; ?>">
                 </div>
@@ -65,8 +67,9 @@
                 <form action="../api/update.php" method='post' enctype="multipart/form-data">
                     <h5 class="modal-title" id="exampleModalLongTitle">更新圖片</h5>
                     <div class="modal-body">
+                    <!-- <img class="portim w-100" src="../img/<?= $Portfolio->find(6)['img']; ?>"> -->
                         <input type="file" name="img">
-                        <input type="hidden" name="hiddenid" id="hiddenid">
+                        <input type="hidden" name="id" id="hiddenid">
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -103,15 +106,8 @@
         $('#por').append(row);
     }
 
-
-    // $(".portfo").click(function() {
-    //     var my_id_value = $(this).data('id');
-    //     $(".modal-body #hiddenid").val(my_id_value);
-    //     console.log(my_id_value);
-    // });
-
-    // const showmodal = (id) => {
-    //     $("#portrait").modal('show')
-    //     $("#portrait input[type=hidden]").val(id)
-    // }
+function editPortrait(id){
+   $("#hiddenid").val(id);
+}
+    
 </script>
