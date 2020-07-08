@@ -4,6 +4,8 @@
 include_once "../base.php";
 
 $id=$_POST['id'];
+// var_dump($_POST);
+
 $db=new DB('portfolio');
 
 // var_dump($db);
