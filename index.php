@@ -26,7 +26,7 @@ if (!empty($_POST['acc']) && !empty($_POST['pw'])) {
         font-family: 'Noto Sans TC', sans-serif;
     }
 
-    .main {
+    body {
         min-height: 60vh;
         background: #eee;
     }
