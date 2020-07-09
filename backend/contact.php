@@ -4,7 +4,7 @@ $db = new DB('contact');
 
 <form action="../api/portrait.php" method="post" enctype="multipart/form-data">
     <div class="form-group">
-        <img src="../img/pic.jpg" class="img-thumbnail w-25 mx-auto d-block">
+        <img src="../img/<?= $db->find(2)['name']; ?>" class="img-thumbnail w-25 mx-auto d-block">
         <input type="file" name="pic" class="btn btn-warning mx-auto d-block m-1">
         <button type="submit" class="btn btn-primary mx-auto d-block">更新照片(jpg)</button>
     </div>
