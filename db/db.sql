@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.1
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
 -- 主機： 127.0.0.1
--- 產生時間： 2020-07-07 09:58:07
--- 伺服器版本： 10.4.11-MariaDB
--- PHP 版本： 7.4.3
+-- 產生時間： 2020-07-09 06:34:27
+-- 伺服器版本： 10.4.13-MariaDB
+-- PHP 版本： 7.4.7
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -65,7 +64,8 @@ CREATE TABLE `contact` (
 --
 
 INSERT INTO `contact` (`id`, `name`, `image`, `tel`, `email`, `addr`, `intro`) VALUES
-(1, '張建文', '11111', '+886-931833488', 'chang180@gmail.com', '新北市永和區', '目前在職訓局接受PHP資料庫網頁程式設計職前訓練');
+(1, '張建文', '11111', '+886-931833488', 'chang180@gmail.com', '新北市永和區', '目前在職訓局接受PHP資料庫網頁程式設計職前訓練'),
+(2, 'pic.jpg', '', '', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -252,7 +252,7 @@ ALTER TABLE `autobiography`
 -- 使用資料表自動遞增(AUTO_INCREMENT) `contact`
 --
 ALTER TABLE `contact`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- 使用資料表自動遞增(AUTO_INCREMENT) `education`
