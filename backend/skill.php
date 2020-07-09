@@ -1,14 +1,11 @@
-<div>&nbsp;
-    <button class="btn btn-success float-right" onclick="moreSkill()">新增</button>
-</div>
 <form action="../api/skill.php" method="post">
     <div id="ski">
         <?php include_once "../base.php";
         $db = new DB('skill');
         $ski = $db->all("", " ORDER BY `catalog`");
         foreach ($ski as $key => $value) {
-
-        ?>
+            
+            ?>
             <div class="border border-warning m-3">
                 <div class="form-group">
                     <label for="skill">技能</label>
@@ -39,6 +36,9 @@
     <button type="reset" class="btn btn-secondary">重置</button>
     <!-- button自帶submit效果 -->
 </form>
+<div>&nbsp;
+    <button class="btn btn-success float-right" onclick="moreSkill()">新增</button>
+</div>
 <script>
     moreSkill = () => {
         let row = `

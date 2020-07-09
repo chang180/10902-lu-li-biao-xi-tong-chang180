@@ -12,6 +12,7 @@
     <style>
         * {
             font-family: 'Noto Sans TC', sans-serif;
+            background:#eee;
         }
     </style>
 </head>

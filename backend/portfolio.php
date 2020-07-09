@@ -1,12 +1,11 @@
-<button class="btn btn-success float-right" onclick="morePor()">新增</button>
 <form action="../api/portfolio.php" method="post" enctype="multipart/form-data">
     <div id="por">
         <?php include_once "../base.php";
         $db = new DB('portfolio');
         $por = $db->all("");
         foreach ($por as $key => $value) {
-
-        ?>
+            
+            ?>
             <div class="border border-warning">
                 <div class="form-group">
                     <label for="title">作品名稱</label>
@@ -58,6 +57,7 @@
     <button type="submit" class="btn btn-primary">確認資料</button>
     <button type="reset" class="btn btn-secondary">重置</button>
 </form>
+        <button class="btn btn-success float-right" onclick="morePor()">新增</button>
 
 <!-- Modal -->
 <div class="modal fade" id="portrait" tabindex="-1" role="dialog">

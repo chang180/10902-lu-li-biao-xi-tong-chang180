@@ -23,7 +23,7 @@
         font-family: 'Noto Sans TC', sans-serif;
     }
 
-    .body {
+    body {
         min-height: 60vh;
         background: #eee;
     }

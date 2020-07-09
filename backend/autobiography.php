@@ -1,12 +1,11 @@
-<button class="btn btn-success float-right" onclick="moreAut()">新增</button>
 <form action="../api/autobiography.php" method="post">
     <div id="aut">
         <?php include_once "../base.php";
         $db = new DB('autobiography');
         $aut = $db->all();
         foreach ($aut as $key => $value) {
-
-        ?>
+            
+            ?>
             <div class="form-group">
                 <label for="content">自傳</label>
                 <textarea class="form-control" id="content" rows="3" name="content[]"><?= $value['content']; ?></textarea>
@@ -29,6 +28,7 @@
     <button type="reset" class="btn btn-secondary">重置</button>
     <!-- button自帶submit效果 -->
 </form>
+        <button class="btn btn-success float-right" onclick="moreAut()">新增</button>
 <script>
     moreAut = () => {
         let row = `

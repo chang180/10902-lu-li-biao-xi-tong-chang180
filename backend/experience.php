@@ -1,4 +1,3 @@
-<button class="btn btn-success float-right" onclick="moreExp()">新增</button>
 <form action="../api/experience.php" method="post">
     <div id="exp">
         <?php include_once "../base.php";
@@ -6,7 +5,7 @@
         $exp = $db->all("", " ORDER BY `start` DESC");
         foreach ($exp as $key => $value) {
 
-        ?>
+            ?>
             <div class="form-group">
                 <label for="company">公司</label>
                 <input type="text" class="form-control" name="company[]" value="<?= $value['company']; ?>">
@@ -45,6 +44,7 @@
     <button type="submit" class="btn btn-primary">確認資料</button>
     <button type="reset" class="btn btn-secondary">重置</button>
 </form>
+        <button class="btn btn-success float-right" onclick="moreExp()">新增</button>
 <script>
     moreExp = () => {
         let row = `
