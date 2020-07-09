@@ -1,9 +1,10 @@
+<div class="card-deck">
 <?php include_once "base.php";
     $db = new DB('portfolio');
     $por = $db->all(['sh'=>1]);
-foreach($por as $key=>$value){
-
-    ?>
+    foreach($por as $key=>$value){
+        
+        ?>
 <div class="col-12 col-md-6 col-lg-3">
     <div class="card m-1 border rounded-lg shadow">
         <img src="img/<?=$value['img'];?>" class="card-img-top portimg img-thumbnail">
@@ -17,3 +18,4 @@ foreach($por as $key=>$value){
 <?php
 }
 ?>
+</div>
