@@ -4,7 +4,7 @@ $db = new DB('contact');
 
 <form>
     <div class="form-group">
-        <img src="img/<?= $db->find(2)['name']; ?>" class="img-thumbnail rounded-circle w-25 mx-auto d-block">
+        <img src="img/<?= @$db->find(2)['name']; ?>" class="img-thumbnail rounded-circle w-25 mx-auto d-block">
     </div>
     <div class="form-group">
         <label for="name">姓名</label>

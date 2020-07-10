@@ -4,8 +4,8 @@
         $db = new DB('portfolio');
         $por = $db->all("");
         foreach ($por as $key => $value) {
-            
-            ?>
+
+        ?>
             <div class="border border-warning">
                 <div class="form-group">
                     <label for="title">作品名稱</label>
@@ -27,7 +27,7 @@
                     </button> -->
 
 
-                    <button type="button" class="btn btn-primary portfo" data-toggle="modal" data-target="#portrait" data-id="<?= $value['id']; ?>" onclick="editPortrait(<?= $value['id']; ?>)">
+                    <button type="button" class="btn btn-primary portfo" data-toggle="modal" data-target="#portrait" onclick="editPortrait(<?= $value['id']; ?>,'<?= $value['img']; ?>')">
                         更新圖片
                     </button>
 
@@ -57,7 +57,7 @@
     <button type="submit" class="btn btn-primary">確認資料</button>
     <button type="reset" class="btn btn-secondary">重置</button>
 </form>
-        <button class="btn btn-success float-right" onclick="morePor()">新增</button>
+<button class="btn btn-success float-right" onclick="morePor()">新增</button>
 
 <!-- Modal -->
 <div class="modal fade" id="portrait" tabindex="-1" role="dialog">
@@ -67,8 +67,9 @@
                 <form action="../api/update.php" method='post' enctype="multipart/form-data">
                     <h5 class="modal-title" id="exampleModalLongTitle">更新圖片</h5>
                     <div class="modal-body">
-                    <!-- <img class="portim w-100" src="../img/<?= $Portfolio->find(6)['img']; ?>"> -->
-                        <input type="file" name="img">
+                        <!-- 圖片預覽 -->
+                        <img class="w-100" id="portim" src="#">
+                        <input type="file" name="img" id="imgInp">
                         <input type="hidden" name="id" id="hiddenid">
                     </div>
                     <div class="modal-footer">
@@ -106,8 +107,24 @@
         $('#por').append(row);
     }
 
-function editPortrait(id){
-   $("#hiddenid").val(id);
-}
-    
+    function editPortrait(id, img) {
+        $("#hiddenid").val(id);
+        $("#portim").attr('src', `../img/${img}`);
+    }
+
+    $("#imgInp").change(function() {
+        // console.log("hello");
+        //當檔案改變後，做一些事 
+        readURL(this); // this代表<input id="imgInp">
+    });
+
+    function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function(e) {
+                $("#portim").attr('src', e.target.result);
+            }
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
 </script>
